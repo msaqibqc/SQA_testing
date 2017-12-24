@@ -35,8 +35,8 @@ Feature: Passing parameter to steps
     And I assert "Profile Updated Successfully." is here in "//*[@id="profile"]/div[2]/div[2]/div"
 
   Scenario: Send message from contact page
-    
-    Given I find and click on "/html/body/nav[1]/div/div/div/ul/li[8]" button
+
+    Given I find and click on "/html/body/nav[1]/div/div/div/ul/li[6]" button
     When I enter "RANDOM-STRING-LENGTH:10" in "//input[@placeholder="Name"]" field
     And I enter "RANDOM-STRING-EMAIL-LENGTH:10" in "//input[@placeholder="Email"]" field
     And I enter "Hello World" in "//input[@placeholder="Subject"]" field
@@ -47,7 +47,8 @@ Feature: Passing parameter to steps
 
   Scenario: Logout
     
-    Given I have to open "http://www.phptravels.net/account/logout/"
+    Given I find and click on "/html/body/div[@class='navbar navbar-static-top navbar-default ']/div[@class='container']/div[@class='navbar']/div[@class='navbar-collapse collapse']/ul[@class='nav navbar-nav navbar-right currency_btn']/ul[@class='nav navbar-nav navbar-side navbar-right sidebar']/li[1]/a[@class='dropdown-toggle go-text-right']" button
+    When I find and click on "/html/body/div[@class='navbar navbar-static-top navbar-default ']/div[@class='container']/div[@class='navbar']/div[@class='navbar-collapse collapse']/ul[@class='nav navbar-nav navbar-right currency_btn']/ul[@class='nav navbar-nav navbar-side navbar-right sidebar']/li[@class='open']/ul[@class='dropdown-menu']/li[2]/a[@class='go-text-right']" button
     Then I assert "http://www.phptravels.net/login" page should be opened
     
 
