@@ -21,7 +21,7 @@ Feature: Passing parameter to steps
     And I assert "Hi" is here in "//h3[@class="RTL"]"
 
   Scenario: Edit information
-    
+
     Given I find and click on "//*[@id="body-section"]/div/div[3]/div/div[1]/ul/li[2]" button
     When I enter "RANDOM-STRING-LENGTH:10" in "firstname" readonly field
     And I enter "RANDOM-STRING-LENGTH:10" in "lastname" readonly field
@@ -45,10 +45,11 @@ Feature: Passing parameter to steps
     Then I wait for "1" sec
     And I assert "Message Sent Successfully" is here in "//*[@id="body-section"]/div[1]/div/div/div/form/div[1]/div[1]"
 
+
   Scenario: Logout
     
-    Given I find and click on "/html/body/div[@class='navbar navbar-static-top navbar-default ']/div[@class='container']/div[@class='navbar']/div[@class='navbar-collapse collapse']/ul[@class='nav navbar-nav navbar-right currency_btn']/ul[@class='nav navbar-nav navbar-side navbar-right sidebar']/li[1]/a[@class='dropdown-toggle go-text-right']" button
-    When I find and click on "/html/body/div[@class='navbar navbar-static-top navbar-default ']/div[@class='container']/div[@class='navbar']/div[@class='navbar-collapse collapse']/ul[@class='nav navbar-nav navbar-right currency_btn']/ul[@class='nav navbar-nav navbar-side navbar-right sidebar']/li[@class='open']/ul[@class='dropdown-menu']/li[2]/a[@class='go-text-right']" button
+    Given I find and click on "sidebar" button "1" in class list
+    When I find and click on "dropdown-menu" anchor "1" in "3" number search by class
     Then I assert "http://www.phptravels.net/login" page should be opened
     
 

@@ -28,6 +28,12 @@ class App:
     def find_and_click(self,element_xpath):
         self.driver.find_element_by_xpath(element_xpath).click()
 
+    def find_and_click_by_css(self,class_name, element_num):
+        a=self.driver.find_elements_by_class_name(class_name)[element_num].find_element_by_tag_name("li").click()
+
+    def get_anchor_from_element(self, class_name, anchor_number, list_num):
+        a=self.driver.find_elements_by_class_name(class_name)[list_num].find_elements_by_tag_name("a")[anchor_number].click()
+
     def get_current_url(self):
         return self.driver.current_url
 

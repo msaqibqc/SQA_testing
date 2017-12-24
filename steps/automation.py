@@ -13,6 +13,14 @@ def click_to_the_button(context, button):
 def click_to_the_button(context, button):
     context.browser.find_and_click(button)
 
+@given('I find and click on "{button}" button "{element_num}" in class list')
+def click_to_the_button(context, button, element_num):
+    context.browser.find_and_click_by_css(button, int(element_num))
+
+@when('I find and click on "{button}" anchor "{anchor_num}" in "{list_num}" number search by class')
+def click_to_the_button(context, button, anchor_num, list_num):
+    context.browser.get_anchor_from_element(button, int(anchor_num), int(list_num))
+
 @given('I assert "{url}" page should be opened')
 def getting_a_message (context, url):
     assert url == context.browser.get_current_url()
