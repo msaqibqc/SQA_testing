@@ -59,6 +59,3 @@ def getting_a_message (context, url):
 
 
 
-
-
-

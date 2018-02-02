@@ -2,7 +2,10 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 import string
 import random
+
+
 class App:
+
     def __init__(self):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(15)
@@ -56,7 +59,6 @@ def update_text(text):
                      range(int(text.split(':')[1]))])) + '@gmail.com' if "RANDOM-STRING-EMAIL" in text else text
     text = ''.join([random.choice(string.ascii_letters + string.digits) for _ in
                     range(int(text.split(':')[1]))]) if "RANDOM-STRING" in text else text
-
     return text
 
 
